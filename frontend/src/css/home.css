@@ -1,0 +1,14 @@
+.dancing-letter {
+  display: inline-block;
+  animation: dance 1s ease-in-out; 
+  animation-fill-mode: forwards; 
+}
+
+@keyframes dance {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-10px) rotate(-5deg); }
+  40% { transform: translateY(10px) rotate(5deg); }
+  60% { transform: translateY(-10px) rotate(-5deg); }
+  80% { transform: translateY(10px) rotate(5deg); }
+  100% { transform: translateY(0); }
+}

@@ -1,0 +1,4 @@
+name: my-drupal-portfolio
+recipe: drupal10
+config:
+  webroot: web

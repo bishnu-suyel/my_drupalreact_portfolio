@@ -1,0 +1,24 @@
+uuid: d880d403-a1e6-4365-8a42-b36805883056
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.react_projects
+  module:
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__react_projects_block_1
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:react_projects-block_1'
+settings:
+  id: 'views_block:react_projects-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

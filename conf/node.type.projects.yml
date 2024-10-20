@@ -1,0 +1,18 @@
+uuid: faf869fd-6388-42c0-8232-5c8933d33953
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: projects
+type: projects
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true
