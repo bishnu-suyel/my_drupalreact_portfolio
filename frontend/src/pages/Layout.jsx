@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../css/layout.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Layout = ({ children }) => {
   return (
@@ -36,14 +38,56 @@ const Layout = ({ children }) => {
                 Contact
               </Nav.Link>
             </Nav>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <a
+                href="https://github.com/bishnu-suyel"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "5px 10px",
+                  backgroundColor: "#333",
+                  color: "#fff",
+                  textDecoration: "none",
+                  borderRadius: "5px",
+                  fontSize: "0.8rem",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  style={{ marginRight: "4px" }}
+                />
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/bishnu-suyel"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "5px 10px",
+                  backgroundColor: "#0077b5",
+                  color: "#fff",
+                  textDecoration: "none",
+                  borderRadius: "5px",
+                  fontSize: "0.8rem",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  style={{ marginRight: "4px" }}
+                />
+                LinkedIn
+              </a>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <Container>
         <main>{children}</main>
       </Container>
-
       {/* Footer */}
       <div className="custom-margin">
         <footer className="text-center bg-dark text-light py-3 fixed-bottom">
