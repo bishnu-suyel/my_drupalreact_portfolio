@@ -50,7 +50,7 @@ const Blog = () => {
         <Card className="mb-4 main-card">
           <Card.Img
             variant="top"
-            src={`http://localhost:50106${content.mainImageUrl}`}
+            src={`http://localhost:53557${content.mainImageUrl}`}
             alt="Main Blog Image"
             className="main-image"
           />
@@ -67,7 +67,7 @@ const Blog = () => {
                 <Card className="additional-card">
                   <Card.Img
                     variant="top"
-                    src={`http://localhost:50106${imageUrl}`}
+                    src={`http://localhost:53557${imageUrl}`}
                     alt={`Additional Image ${index + 1}`}
                     className="additional-image"
                   />
