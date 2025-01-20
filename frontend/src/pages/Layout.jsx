@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../css/layout.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import PropTypes from 'prop-types';
 
 const Layout = ({ children }) => {
   return (
@@ -98,6 +98,9 @@ const Layout = ({ children }) => {
       </div>
     </div>
   );
+};
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;
