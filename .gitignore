@@ -2,9 +2,10 @@ web/core
 web/modules/contrib
 web/themes/contrib
 web/sites/default/files/*
+!web/sites/default/files/.gitkeep
 !web/sites/default/files/*.jpg
 !web/sites/default/files/*.png
-!web/sites/default/files/2024-10/*
+!web/sites/default/files/2024-10/
 web/libraries/*
 vendor
 
