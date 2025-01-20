@@ -6,6 +6,7 @@ web/sites/default/files/*
 !web/sites/default/files/*.jpg
 !web/sites/default/files/*.png
 !web/sites/default/files/2024-10/
+!web/sites/default/files/2025-01/
 web/libraries/*
 vendor
 
