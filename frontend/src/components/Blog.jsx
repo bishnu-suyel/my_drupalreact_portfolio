@@ -50,7 +50,7 @@ const Blog = () => {
         <Card className="mb-4 main-card">
           <Card.Img
             variant="top"
-            src={`http://localhost:53557${content.mainImageUrl}`}
+            src={`https://my-drupal-portfolio.lndo.site/${content.mainImageUrl}`}
             alt="Main Blog Image"
             className="main-image"
           />
@@ -67,7 +67,7 @@ const Blog = () => {
                 <Card className="additional-card">
                   <Card.Img
                     variant="top"
-                    src={`http://localhost:53557${imageUrl}`}
+                    src={`http://my-drupal-portfolio.lndo.site/${imageUrl}`}
                     alt={`Additional Image ${index + 1}`}
                     className="additional-image"
                   />
