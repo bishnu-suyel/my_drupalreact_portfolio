@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:53557/jsonapi/";
+const API_URL = "https://my-drupal-portfolio.lndo.site/jsonapi/";
 
 export const fetchContent = async () => {
   try {
