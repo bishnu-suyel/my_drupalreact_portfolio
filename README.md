@@ -26,56 +26,20 @@ To get started, follow these steps:
 git clone https://github.com/bishnu-suyel/my_drupalreact_portfolio
 ```
 
-### Step 2: Start the Lando Environment
-
-Inside the project folder, run the following command to start Lando:
-
-```bash
-lando start
-```
-
-### Step 3: Install Dependencies
+### Step 2: Install Dependencies
 
 Make sure the necessary dependencies are installed:
 
 ```bash
 lando composer install
 ```
+### Step 3: Start the Lando Environment
 
-### Step 4: Install Drupal and Configure the Database
-
-Run the following command to install the Drupal site and configure the database:
-
-```bash
-lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
-```
-
-### Step 5: Configure CORS Settings
-
-Edit the services.yml file to manage CORS issues between the frontend and backend. Add the following:
-
-services.yml
+Inside the project folder, run the following command to start Lando:
 
 ```bash
-cors.config:
-  enabled: true
-  allowedHeaders: ["*"]
- allowedMethods: ["GET", "POST", "OPTIONS", "PATCH", "PUT", "DELETE"]
-  allowedOrigins: ["*"]
-  supportsCredentials: true
+lando start
 ```
-
-### Step 6: Set Up JSON
-
-To enable JSON
-in Drupal, follow these steps:
-
-### Step 7: Enable the JSON module:
-
-```bash
-lando drush en jsonapi -y
-```
-
 Access the content through the API at a URL like:
 
 ```bash
