@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchContent } from "../services/api";
 import { Container } from "react-bootstrap";
 

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import { fetchContent } from "../services/api";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Spinner, Alert } from "react-bootstrap";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -33,61 +33,61 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  
- const handleSubmit = (e) => {
-   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-   const emailData = {
-     name: formData.name,
-     email: formData.email,
-     subject: formData.subject,
-     message: formData.message,
-   };
+    const emailData = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
 
-   // Use EmailJS to send the email
-   emailjs
-     .send(
-       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-       emailData,
-       import.meta.env.VITE_EMAILJS_PUBLIC_API_KEY
-     )
-     .then((response) => {
-       console.log("Email sent successfully:", response.status, response.text);
+    // Use EmailJS to send the email
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        emailData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_API_KEY
+      )
+      .then((response) => {
+        console.log("Email sent successfully:", response.status, response.text);
 
-       // Now send the form data to Drupal
-       fetch("http://my-drupal-portfolio.lndo.site/api/contact", {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         // Updated to match the controller
-         body: JSON.stringify(emailData),
-       })
-         .then((res) => {
-           if (!res.ok) {
-             throw new Error("Failed to send data to Drupal");
-           }
-           return res.json();
-         })
-         .then((data) => {
-           console.log("Data sent to Drupal successfully:", data);
-           // Reset form after successful submission
-           setFormData({
-             name: "",
-             email: "",
-             subject: "",
-             message: "",
-           });
-         })
-         .catch((error) => {
-           console.error("Error sending data to Drupal:", error);
-         });
-     })
-     .catch((error) => {
-       console.error("Error sending email:", error);
-     });
- };
+        // Now send the form data to Drupal
+        fetch("http://my-drupal-portfolio.lndo.site/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // Updated to match the controller
+          body: JSON.stringify(emailData),
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("Failed to send data to Drupal");
+            }
+            return res.json();
+          })
+          .then((data) => {
+            console.log("Data sent to Drupal successfully:", data);
+            // Reset form after successful submission
+            setFormData({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
+          })
+          .catch((error) => {
+            console.error("Error sending data to Drupal:", error);
+          });
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
+
   return (
     <Container
       style={{
@@ -101,7 +101,11 @@ const Contact = () => {
       <h1>Contact Me</h1>
       <Row>
         <Col md={6}>
-          {content && content.attributes && content.attributes.body ? (
+          {loading ? (
+            <Spinner animation="border" variant="primary" />
+          ) : error ? (
+            <Alert variant="danger">Error fetching content: {error.message}</Alert>
+          ) : content && content.attributes && content.attributes.body ? (
             <div
               dangerouslySetInnerHTML={{
                 __html: content.attributes.body.value,
@@ -111,7 +115,7 @@ const Contact = () => {
             <div>No content available</div>
           )}
         </Col>
-        <Col md={4} >
+        <Col md={4}>
           <h2>Send a message</h2>
           <p>
             Don’t hesitate to reach out. I look forward to hearing your thoughts

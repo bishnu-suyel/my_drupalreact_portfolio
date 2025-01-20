@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import { Image, Row, Col, Container } from "react-bootstrap";
 import { fetchContent } from "../services/api";
 
@@ -20,7 +20,7 @@ const About = () => {
           const match = bodyValue.match(
             /src="(\/sites\/default\/files\/[^"]+)"/
           );
-          const imageUrl = match ? `https://my-drupal-portfolio.lndo.site/${match[1]}` : null;
+          const imageUrl = match ? `http://my-drupal-portfolio.lndo.site/${match[1]}` : null;
 
           setContent({
             ...data.data[0],

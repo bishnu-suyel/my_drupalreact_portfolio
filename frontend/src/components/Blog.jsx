@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import { fetchContent } from "../services/blogApi";
 import { Card, Row, Col, Container } from "react-bootstrap";
 import "../css/blog.css";
@@ -50,7 +50,7 @@ const Blog = () => {
         <Card className="mb-4 main-card">
           <Card.Img
             variant="top"
-            src={`https://my-drupal-portfolio.lndo.site/${content.mainImageUrl}`}
+            src={`http://my-drupal-portfolio.lndo.site/${content.mainImageUrl}`}
             alt="Main Blog Image"
             className="main-image"
           />
