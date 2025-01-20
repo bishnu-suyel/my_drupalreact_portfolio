@@ -1,0 +1,32 @@
+uuid: c37d55ed-de87-486b-9538-78d7937ec21b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.projectss.body
+    - field.field.node.projectss.field_project_image
+    - node.type.projectss
+  module:
+    - text
+    - user
+id: node.projectss.teaser
+targetEntityType: node
+bundle: projectss
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_project_image: true

@@ -1,0 +1,41 @@
+uuid: 7fd72849-2ae7-4289-820f-3198f7b7b8cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.projectss.body
+    - field.field.node.projectss.field_project_image
+    - node.type.projectss
+  module:
+    - image
+    - text
+    - user
+id: node.projectss.default
+targetEntityType: node
+bundle: projectss
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_project_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
